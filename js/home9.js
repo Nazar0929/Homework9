@@ -100,10 +100,12 @@ console.log(checkForSpam("typesale"));
 
 
 let input;
-const numbers = [3, 98, 32, 56, 21, 1, 7];
+const numbers = []; 
+
 let total = 0;
 
 while (true) {
+
     input = prompt("Введіть число:");
 
     if (input === null) {
@@ -113,19 +115,23 @@ while (true) {
     const number = Number(input);
 
     if (isNaN(number)) {
-        alert('Було введено не число, спробуйте ще раз');
-        continue; 
-    }
 
+        alert('Було введено не число, спробуйте ще раз');
+        continue;
+    }
     numbers.push(number);
 }
 
-for (let i = 0; i < numbers.length; i += 1) {
-    total += numbers[i];
+if (numbers.length > 0) {
+    for (let i = 0; i < numbers.length; i += 1) {
+        total += numbers[i];
+    }
+
+    console.log(`Сума чисел дорівнює ${total}`);
+
+} else {
+    console.log("Нема введеного числа");
 }
-
-console.log(`Загальна сума чисел дорівнює ${total}`);
-
 
 
 
